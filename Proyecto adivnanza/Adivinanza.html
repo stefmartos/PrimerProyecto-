@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+ <html> 
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+ <head>
+
+  <meta name="viewport" content="Adivinanza"> 
+  <meta charset="UTF-8">
+  <title>Página Web Stefania Martos</title>
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+
+
+
+  
+
+</head>
+<style>
+
+body {font-family: 'Open Sans', sans-serif; background-image: url(imagenes/waffle\ mickey.jpg); background-size: 100% 100%;}
+table {width: 600px; border: 1px solid black; border-collapse: collapse;background-color:rgb(208, 235, 226); } 
+td {border: 1px solid black} 
+th {border: 1px solid black} 
+tfoot {text-align: center; }
+tr {align-content: center;}
+.menu {list-style: none;padding: 0%; background-color: rgba(10, 161, 136, 0.918); width: 90%; max-width: 1000px;margin: auto;}
+.menu li a{text-decoration: none;color: white;padding: 20px;display: block;}
+.menu li {display: inline-block;text-align: center;}
+.menu li a:hover {background: darkblue;}
+</style>
+  
+
+<body>
+    <ul class="menu">
+      <li> <a href="index.html">Inicio</a></li>
+      <li> <a href="Peliculas.html">Películas</a></li>
+      <li> <a href="Adivinanza.html">Adivinanza</a></li>
+      <li> <a href="Suscripcion.html">Suscripción</a></li>
+
+    </ul>       
+    
+           
+            <h1 align="center">ADIVINANZA</h1>
+
+            <p align="center"><b>¿De qué princesa es el castillo de la foto?</b></p>
+            <div align= "center"><img src="Castillo disney - adivinanza.jpg" align= "center" alt=" " widht="200" height="350" style="border:20px solid black" ></div>
+            </img src></div>
+            <br> <br> <br>
+          
+            <form id="myForm">
+              <div align = "center"><table>
+                  <tr>
+                      <td>Respuesta: <input type="text" id="txtRespuesta" /></td>
+                  </tr>
+        </table>
+        <br>
+         
+            <td colspan="2" align="center" ><input type="submit" value="Validar" id="btnValidar" height="adjust"onclick=validar()></td>
+                  
+            </div>
+          </form>
+          <br>
+         
+          <script>
+      
+            
+              var form = document.getElementById("myForm");
+              function handleForm(event) { event.preventDefault(); }
+              form.addEventListener('submit', handleForm);
+          </script>
+          <p align= "center"><a href="index.html"> Volver al menú anterior</a></p>
+      <br>
+      
+          </body>
+    
+    </html>
+    <script>
+
+      var intentosRest = 4;
+      var pistas;
+      var RespuestaCorrecta = "cenicienta";
+      
+  
+      function validar() {
+  
+          var txtRespuesta = document.getElementById('txtRespuesta');
+  
+  
+          if (txtRespuesta.value !== RespuestaCorrecta)  {
+              intentosRest--
+  
+              alert('Incorrecto! te quedan ' + intentosRest + ' intentos');
+              if (intentosRest == 2) {
+  
+                  alert('Pista: Su película se encuentra en el TOP 3 de las más taquilleras');
+              }
+              if (intentosRest == 1) {
+  
+                  alert('Última pista: Es la que pierde un zapato de cristal');
+              }
+              if (intentosRest == 0) {
+  
+                  alert('¡Perdiste! Intentá nuevamente');
+                  document.getElementById('btnValidar').style.display = 'none';
+              }
+          }
+          
+  
+      
+              if (txtRespuesta.value === RespuestaCorrecta)  {
+                  alert('FELICTACIONES! Adivinaste el acertijo')
+              }
+          }
+  
+  
+  </script>
+  
